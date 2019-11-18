@@ -106,6 +106,32 @@
             {% if shibbolethConfig.shibboleth_view_groups_ldap_dn !='' %} value="{{ shibbolethConfig.shibboleth_view_groups_ldap_dn }}" {%endif%}
             inline-help="{{'LoginShibboleth_ShibbolethViewGroupsLdapDNDesc'|translate}}">
         </div>
+        <h4>{{ 'LoginShibboleth_WriteGroups'|translate }}</h4>
+        <div piwik-field uicontrol="text" name="shibboleth_write_groups"
+             ng-model="adminController.data.shibboleth_write_groups"
+             title="{{ 'LoginShibboleth_ShibbolethWriteGroups'|translate }}"
+                {% if shibbolethConfig.shibboleth_write_groups !='' %} value="{{ shibbolethConfig.shibboleth_write_groups }}" {% endif %}
+             inline-help="{{ 'LoginShibboleth_ShibbolethWriteGroupsDesc'|translate }}">
+        </div>
+        <div piwik-field uicontrol="radio" name="shibboleth_write_groups_option"
+             ng-model="adminController.data.shibboleth_write_groups_option"
+             title="{{ 'LoginShibboleth_ShibbolethWriteGroupsOptions'|translate }}"
+             options='{shibboleth_write_groups_domains_active: "{{ 'LoginShibboleth_ShibbolethWriteGroupsContainsDomain'|translate }}", shibboleth_write_groups_ldap_active: "{{ 'LoginShibboleth_ShibbolethWriteGroupLdapActive'|translate }}" }'
+                {% if shibbolethConfig.shibboleth_write_groups_option !='' %} value="{{ shibbolethConfig.shibboleth_write_groups_option }}" {% endif %}
+             inline-help="{{ 'LoginShibboleth_ShibbolethWriteGroupsContainsDomainDesc'|translate }}<br/>{{ 'LoginShibboleth_ShibbolethWriteGroupLdapActiveDesc'|translate }}">
+        </div>
+        <div piwik-field uicontrol="text" name="shibboleth_write_groups_ldap_attr"
+             ng-model="adminController.data.shibboleth_write_groups_ldap_attr"
+             title="{{ 'LoginShibboleth_ShibbolethWriteGroupsLdapAttr'|translate }}"
+                {% if shibbolethConfig.shibboleth_write_groups_ldap_attr !='' %} value="{{ shibbolethConfig.shibboleth_write_groups_ldap_attr }}" {% endif %}
+             inline-help="{{ 'LoginShibboleth_ShibbolethWriteGroupsLdapAttrDesc'|translate }}">
+        </div>
+        <div piwik-field uicontrol="text" name="shibboleth_write_groups_ldap_dn"
+             ng-model="adminController.data.shibboleth_write_groups_ldap_dn"
+             title="{{ 'LoginShibboleth_ShibbolethWriteGroupsLdapDN'|translate }}"
+                {% if shibbolethConfig.shibboleth_write_groups_ldap_dn !='' %} value="{{ shibbolethConfig.shibboleth_write_groups_ldap_dn }}" {% endif %}
+             inline-help="{{ 'LoginShibboleth_ShibbolethWriteGroupsLdapDNDesc'|translate }}">
+        </div>
         <h4>{{'LoginShibboleth_AdminGroups'|translate}}</h4>
         <div piwik-field uicontrol="text" name="shibboleth_admin_groups"
             ng-model="adminController.data.shibboleth_admin_groups"

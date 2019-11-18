@@ -157,6 +157,15 @@ class ShibbolethAdapter extends Adapter
                 $attr = explode($this->separator, Config::getShibbolethViewGroupLdapAttr());
             }
         }
+        if ($accessType == 'Write') {
+            if (Config::getShibbolethWriteGroups() !== '') {
+                $serverGroups = Config::getShibbolethWriteGroups();
+                $ldapActive = 'shibboleth_write_groups_ldap_active';
+                $option = Config::getShibbolethWriteGroupOption();
+                $dn = Config::getShibbolethWriteGroupLdapDN();
+                $attr = explode($this->separator, Config::getShibbolethWriteGroupLdapAttr());
+            }
+        }
         if ($accessType == 'Admin') {
             if (Config::getShibbolethAdminGroups() !== '') {
                 $serverGroups = Config::getShibbolethAdminGroups();

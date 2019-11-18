@@ -57,11 +57,15 @@ class Config
       'shibboleth_view_groups' => '',
       'shibboleth_groups_manual' => '',
       'shibboleth_groups_manual_active' => '',
+      'shibboleth_write_groups' => '',
       'shibboleth_admin_groups' => '',
       'shibboleth_superuser_groups' => '',
       'shibboleth_view_groups_option' => '',
       'shibboleth_view_groups_ldap_dn' => '',
       'shibboleth_view_groups_ldap_attr' => '',
+      'shibboleth_write_groups_option' => '',
+      'shibboleth_write_groups_ldap_dn' => '',
+      'shibboleth_write_groups_ldap_attr' => '',
       'shibboleth_admin_groups_option' => '',
       'shibboleth_admin_groups_ldap_dn' => '',
       'shibboleth_admin_groups_ldap_attr' => '',
@@ -368,6 +372,16 @@ class Config
     }
 
     /**
+     * Returns the Shibboleth write group key.
+     *
+     * @return string
+     */
+    public static function getShibbolethWriteGroups()
+    {
+        return self::getConfigOption('shibboleth_write_groups');
+    }
+
+    /**
      * Returns the Shibboleth admin group key.
      *
      * @return string
@@ -443,6 +457,36 @@ class Config
     public static function getShibbolethViewGroupLdapAttr()
     {
         return self::getConfigOption('shibboleth_view_groups_ldap_attr');
+    }
+
+    /**
+     * Returns the Shibboleth Write Group option.
+     *
+     * @return string
+     */
+    public static function getShibbolethWriteGroupOption()
+    {
+        return self::getConfigOption('shibboleth_write_groups_option');
+    }
+
+    /**
+     * Returns the Ldap DN for the group search for the Shibboleth Write Group.
+     *
+     * @return string
+     */
+    public static function getShibbolethWriteGroupLdapDN()
+    {
+        return self::getConfigOption('shibboleth_write_groups_ldap_dn');
+    }
+
+    /**
+     * Returns the LDAP attribute for the groups search of domain from Write Group.
+     *
+     * @return string
+     */
+    public static function getShibbolethWriteGroupLdapAttr()
+    {
+        return self::getConfigOption('shibboleth_write_groups_ldap_attr');
     }
 
     /**
